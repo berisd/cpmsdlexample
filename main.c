@@ -2,6 +2,11 @@
 
 int main(int argc, char *argv[])
 {
+    SDL_version sdlVersion;
+    SDL_GetVersion(&sdlVersion);
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Using SDL version %d.%d.%d", sdlVersion.major, sdlVersion.minor,
+                sdlVersion.patch);
+
     SDL_Init(SDL_INIT_VIDEO);
 
     SDL_Window *window = SDL_CreateWindow(
