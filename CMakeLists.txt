@@ -29,7 +29,7 @@ elseif(UNIX)
     if (CMAKE_BUILD_TYPE STREQUAL "Debug")
         set(MY_SDL2_LIB_NAME "libSDL2-2.0d.so.0")
     ELSEIF(CMAKE_BUILD_TYPE STREQUAL "Release")
-        set(MY_SDL2_LIB_NAME "libSDL2-2.0.so")
+        set(MY_SDL2_LIB_NAME "libSDL2-2.0.so.0")
     ENDIF()
 ENDIF()
 
