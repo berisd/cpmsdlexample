@@ -3,6 +3,10 @@ project(cpmsdlexample C)
 
 set(CMAKE_C_STANDARD 11)
 
+if (UNIX)
+    set(CMAKE_BUILD_RPATH  $ORIGIN)
+endif()
+
 include(cmake/CPM.cmake)
 CPMAddPackage(
         NAME SDL2
@@ -23,7 +27,7 @@ IF (WIN32)
 elseif(UNIX)
     message(STATUS "Detected Unix!")
     if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-        set(MY_SDL2_LIB_NAME "libSDL2-2.0d.so")
+        set(MY_SDL2_LIB_NAME "libSDL2-2.0d.so.0")
     ELSEIF(CMAKE_BUILD_TYPE STREQUAL "Release")
         set(MY_SDL2_LIB_NAME "libSDL2-2.0.so")
     ENDIF()
